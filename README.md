@@ -3,7 +3,7 @@ Allows you to generate a reactive data source for Meteor/Tracker from a part of 
 
 ## Goals
 
-Whether you are integrating Redux into an existing Meteor project, or wanting to create a new project using Redux and Tracker, it is not easy to get both systems (Redux/Tracker) to play well together. This mini helper module make the binding between both easier while retaining the redux Store as the unique source of truth.
+Whether you are integrating Redux into an existing Meteor project, or wanting to create a new project using Redux and Tracker, it is not easy to get both systems (Redux/Tracker) to play well together. This mini helper module allow you to generate reactive data source from the redux Store for Meteor to consume.
 
 ## Usage
 
