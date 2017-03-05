@@ -1,29 +1,34 @@
 import {Tracker} from "meteor/tracker";
 import {get as pathGet} from 'object-path';
+import initSubscriber from "redux-subscriber";
+import {subscribe} from "redux-subscriber";
 
-class ReactiveSource{
-  constructor(pathOrSelector, Store, subscribe){
-    this.dep = new Tracker.Dependency();
-    this.Store = Store;
-    if (typeof pathOrSelector === "string"){
-      this.path = pathOrSelector;
-      subscribe(pathOrSelector, ()=>(this.dep.changed()));
-    } else if (typeof pathOrSelector === "function"){
-      this.selector = pathOrSelector;
-    } else {
-      throw new Error("ReactiveSource constructor pathOrSelector param should be a path as as string or a selector function");
+
+let subscriber;
+
+const factory = (path, Store)=>{
+  if (typeof path !== "string"){
+    throw new Error("factory path should be a string");
+  }
+  if (!Store || typeof Store.getState !== "function"){
+    throw new Error("factory should be provided with a Store");
+  }
+
+  if (!subscriber){
+    subscriber = initSubscriber(Store);
+  }
+  const dep = new Tracker.Dependency();
+  const unsubscribe = subscriber(path, ()=>(dep.changed()));
+  return {
+    get(){
+      dep.depend();
+      return pathGet(Store.getState(), path);
+    },
+    cancel(){
+      unsubscribe();
     }
   }
-  get(){
-    this.dep.depend();
-    if (this.path){
-      return pathGet(Store.getState(), this.path);
-    } else if (this.selector){
-      return this.selector(Store.getState());
-    }
-
-  }
-}
+};
 
 
-export default ReactiveSource;
+export default factory;

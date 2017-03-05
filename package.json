@@ -2,6 +2,7 @@
   "name": "tracker-redux-source",
   "version": "1.0.0",
   "description": "",
+  "files": ["lib"],
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run clean && npm run build",
