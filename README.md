@@ -1,4 +1,4 @@
-# tracker-redux-source
+# reactive-redux
 Allows you to generate a reactive data source for Meteor/Tracker from a part of a Redux tree.
 
 ## Goals
