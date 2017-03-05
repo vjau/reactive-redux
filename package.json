@@ -10,8 +10,12 @@
     "build": "babel index.js -d lib",
     "clean": "rimraf lib"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Vincent Jaubert (https://github.com/vjau)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjau/tracker-redux-source.git"
+  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
