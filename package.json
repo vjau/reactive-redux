@@ -1,5 +1,5 @@
 {
-  "name": "tracker-redux-source",
+  "name": "reactive-redux",
   "version": "1.0.0",
   "description": "",
   "files": ["lib"],
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vjau/tracker-redux-source.git"
+    "url": "git+https://github.com/vjau/reactive-redux.git"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
