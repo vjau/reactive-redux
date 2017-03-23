@@ -1,8 +1,10 @@
 {
   "name": "reactive-redux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run clean && npm run build",
@@ -22,6 +24,7 @@
     "rimraf": "^2.6.1"
   },
   "dependencies": {
-    "object-path": "^0.11.4"
+    "object-path": "^0.11.4",
+    "redux-subscriber": "^1.1.0"
   }
 }
