@@ -19,7 +19,7 @@ state = {
 
 You would like to rerun your autoruns based on the id of the selected post in your store.
 ```js
-import factory from "tracker-redux-source";
+import factory from "reactive-redux";
 import {Tracker} from "meteor/tracker";
 import {Store} from "./whereItWasInitialized.js";
 
@@ -41,7 +41,7 @@ This way you can avoid using a magic string, and there is only one place to chan
 
 The precedent example becomes this :
 ```js
-import factory from "tracker-redux-source";
+import factory from "reactive-redux";
 import {Tracker} from "meteor/tracker";
 import {Store} from "./whereItWasInitialized.js";
 
